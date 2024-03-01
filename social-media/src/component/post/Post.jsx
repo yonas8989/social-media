@@ -1,6 +1,10 @@
 import "./post.css";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-function Post() {
+import { Users } from "../../dummyData";
+
+function Post({post}) {
+  const user = Users.filter(u=>u.id===1);
+  console.log(user[0].username);
   return (
     <div className="post">
       <div className="postWrapper">
@@ -8,12 +12,12 @@ function Post() {
         <div className="postTop">
           <div className="postTopLeft">
             <img
-              src="./asset/person/3.jpeg"
+              src={Users.filter(u=>u.id===post.userId)[0].profilePicture}
               alt=""
               className="postProfileImg"
             />
-            <span className="postUserName">yonas fikadie</span>
-            <span className="postDate"> 5 days ago</span>
+            <span className="postUserName">{Users.filter(u=>u.id===post.userId)[0].username}</span>
+            <span className="postDate"> {post?.date}</span>
           </div>
 
 
@@ -24,8 +28,8 @@ function Post() {
 
         </div>
         <div className="postCenter">
-          <span className="postText">hey! it is my first post</span>
-          <img src="./asset/post/1.jpeg" alt="" className="postImg" />
+          <span className="postText">{post?.desc}</span>
+          <img src={post?.photo} alt="" className="postImg" />
         </div>
         
         <div className="postBottom">
@@ -33,11 +37,11 @@ function Post() {
           <div className="postBottomLeft">
             <img src="asset/like.png" alt="" className="likeIcon" />
             <img src="asset/heart.png" alt="" className="likeIcon" />
-            <span className="postLikeCounter">32 people like it </span>
+            <span className="postLikeCounter"> {post?.like} people like it </span>
           </div>
 
           <div className="postBottomRight">
-            <span className="postComment">9 comment</span>
+            <span className="postComment">{post?.comment} comment</span>
           </div>
         </div>
       </div>
