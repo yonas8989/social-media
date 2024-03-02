@@ -50,7 +50,7 @@ function Rightbar({ profile }) {
 
         <div className="rightbarFollowings">
           {Users.map((u) =>(
-            <HomeFriend key={u.id} user = {u} />
+            <HomeFriend key={u.id} user = {u}/>
 
           ) )}
 
@@ -62,7 +62,8 @@ function Rightbar({ profile }) {
   return (
     <div className="rightbar">
       <div className="rightbarWrapper">
-        <ProfileRightbar />
+        {profile ? <ProfileRightbar />: <HomeRightbar/>}
+       
       </div>
     </div>
   );
