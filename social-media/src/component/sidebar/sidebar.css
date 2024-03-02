@@ -2,6 +2,8 @@
     flex: 3;
     height: calc(100vh - 50px);
     overflow-y: scroll;
+    position: sticky;
+    top: 50px  ;
 }
 
 /* this is adecoration for schroll bar  */
@@ -45,18 +47,4 @@
     padding: 0;
     margin: 0;
     list-style: none;
-}
-.sidebarFriend{
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-.sidebarFriendImg{
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-.sidebarFriendName{
-    margin-left: 10px;
 }
