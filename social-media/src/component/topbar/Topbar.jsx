@@ -3,7 +3,19 @@ import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import ChatIcon from "@mui/icons-material/Chat";
+import Home from '../../pages/home/Home'
+import { useState } from "react";
+import Profile from "../../pages/profile/Profile";
 function Topbar() {
+  const [home , sethome] = useState(<Profile/>)
+
+  function handleClick(){
+    sethome(<Home/>)
+
+  }
+
+
+
   return (
     <div className="topbarContainer">
       {/* top bar left  */}
@@ -27,7 +39,7 @@ function Topbar() {
 
         {/* topbar link */}
         <div className="topbarLink">
-          <span className="topbarLink">Homepage </span>
+          <span className="topbarLink" onClick={handleClick}>Home page </span>
           <span className="topbarLink">Timeline</span>
         </div>
 
